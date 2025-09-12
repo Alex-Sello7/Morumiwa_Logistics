@@ -29,7 +29,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Initialize Bootstrap tabs
 function initBootstrapTabs() {
-  // This activates Bootstrap's built-in tab functionality
   const triggerTabList = [].slice.call(document.querySelectorAll('#contact button[data-bs-toggle="tab"]'));
   triggerTabList.forEach(function (triggerEl) {
     new bootstrap.Tab(triggerEl);
@@ -163,6 +162,9 @@ function initCounter() {
             if (counter.getAttribute('data-target-plus') === 'true') {
               counter.innerText += '+';
             }
+            if(counter.getAttribute('data-target-percent') === 'true'){
+              counter.innerText += '%'
+            }
           }
         };
         
@@ -178,6 +180,11 @@ function initCounter() {
       counter.setAttribute('data-target-plus', 'true');
     } else {
       counter.setAttribute('data-target-plus', 'false');
+    }
+    if(counter.innerText.includes('%')){
+      counter.setAttribute('data-target-percent','true');
+    }else{
+      counter.setAttribute('data-target-percent', 'false')
     }
     // Clear the text to start counting from 0
     counter.innerText = '0';
