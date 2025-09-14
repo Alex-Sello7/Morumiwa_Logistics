@@ -398,7 +398,7 @@
               </ul>
             </div>
             <div class="pricing-footer">
-              <a href="#booking" class="btn btn-primary">Select Plan</a>
+              <a href="#contact" class="btn btn-primary">Select Plan</a>
             </div>
           </div>
         </div>
@@ -419,7 +419,7 @@
               </ul>
             </div>
             <div class="pricing-footer">
-              <a href="#booking" class="btn btn-primary">Select Plan</a>
+            <a href="#contact" class="btn btn-primary">Select Plan</a>
             </div>
           </div>
         </div>
@@ -441,7 +441,7 @@
               </ul>
             </div>
             <div class="pricing-footer">
-              <a href="#booking" class="btn btn-primary">Select Plan</a>
+              <a href="#contact" class="btn btn-primary">Select Plan</a>
             </div>
           </div>
         </div>
@@ -531,7 +531,8 @@
         </div>
     </section>
 
-  <!-- Contact section-->
+
+   <!-- Contact section-->
 <section id="contact" class="contact">
   <div class="container">
     <div class="section-title">
@@ -541,32 +542,74 @@
     
     <div class="row">
       <div class="col-lg-8 mb-4 mb-lg-0 mx-auto">
+        <!-- Form Selection Buttons -->
+        <div class="d-flex justify-content-center mb-4">
+          <div class="btn-group" role="group" aria-label="Form selection">
+            <button type="button" class="btn btn-primary active" id="message-tab" data-bs-toggle="tab" data-bs-target="#message" role="tab">
+              <i class="fas fa-envelope me-2"></i>Send Message
+            </button>
+            <button type="button" class="btn btn-outline-primary" id="booking-tab" data-bs-toggle="tab" data-bs-target="#booking" role="tab">
+              <i class="fas fa-calendar-check me-2"></i>Book an Errand
+            </button>
+          </div>
+        </div>
+        
         <div class="card shadow">
           <div class="card-body p-4">
             
             <div class="tab-content" id="contactTabContent">
+              <!-- Message Form -->
+              <div class="tab-pane fade show active" id="message" role="tabpanel" aria-labelledby="message-tab">
+                <form id="messageForm">
+                  <div class="row">
+                    <div class="col-md-6 mb-3">
+                      <label for="message-name" class="form-label">Full Name *</label>
+                      <input type="text" class="form-control" id="message-name" placeholder="Your Name" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label for="message-email" class="form-label">Email Address *</label>
+                      <input type="email" class="form-control" id="message-email" placeholder="Your Email" required>
+                    </div>
+                  </div>
+                  
+                  <div class="mb-3">
+                    <label for="message-subject" class="form-label">Subject *</label>
+                    <input type="text" class="form-control" id="message-subject" placeholder="Message Subject" required>
+                  </div>
+                  
+                  <div class="mb-4">
+                    <label for="message-content" class="form-label">Message *</label>
+                    <textarea class="form-control" id="message-content" rows="5" placeholder="Your message..." required></textarea>
+                  </div>
+                  
+                  <button type="submit" class="btn btn-primary w-100">
+                    <i class="fas fa-paper-plane me-2"></i>Send Message
+                  </button>
+                </form>
+              </div>
+              
               <!-- Booking Form -->
-              <div class="tab-pane fade show active" id="booking" role="tabpanel" aria-labelledby="booking-tab">
+              <div class="tab-pane fade" id="booking" role="tabpanel" aria-labelledby="booking-tab">
                 <form id="bookingForm">
                   <div class="row">
                     <div class="col-md-6 mb-3">
-                      <label for="name" class="form-label">Full Name *</label>
-                      <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                      <label for="booking-name" class="form-label">Full Name *</label>
+                      <input type="text" class="form-control" id="booking-name" placeholder="Your Name" required>
                     </div>
                     <div class="col-md-6 mb-3">
-                      <label for="email" class="form-label">Email Address *</label>
-                      <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+                      <label for="booking-email" class="form-label">Email Address *</label>
+                      <input type="email" class="form-control" id="booking-email" placeholder="Your Email" required>
                     </div>
                   </div>
                   
                   <div class="row">
                     <div class="col-md-6 mb-3">
-                      <label for="phone" class="form-label">Phone Number *</label>
-                      <input type="tel" class="form-control" id="phone" placeholder="Your Phone" required>
+                      <label for="booking-phone" class="form-label">Phone Number *</label>
+                      <input type="tel" class="form-control" id="booking-phone" placeholder="Your Phone" required>
                     </div>
                     <div class="col-md-6 mb-3">
-                      <label for="service" class="form-label">Service Type *</label>
-                      <select class="form-select" id="service" required>
+                      <label for="booking-service" class="form-label">Service Type *</label>
+                      <select class="form-select" id="booking-service" required>
                         <option value="" selected disabled>Select Service</option>
                         <option value="personal">Personal Errands</option>
                         <option value="business">Business Errands</option>
@@ -576,33 +619,33 @@
                   </div>
                   
                   <div class="mb-3">
-                    <label for="pickup" class="form-label">Pickup Location *</label>
-                    <input type="text" class="form-control" id="pickup" placeholder="Pickup Address" required>
+                    <label for="booking-pickup" class="form-label">Pickup Location *</label>
+                    <input type="text" class="form-control" id="booking-pickup" placeholder="Pickup Address" required>
                   </div>
                   
                   <div class="mb-3">
-                    <label for="dropoff" class="form-label">Drop-off Location *</label>
-                    <input type="text" class="form-control" id="dropoff" placeholder="Delivery Address" required>
+                    <label for="booking-dropoff" class="form-label">Drop-off Location *</label>
+                    <input type="text" class="form-control" id="booking-dropoff" placeholder="Delivery Address" required>
                   </div>
                   
                   <div class="row">
                     <div class="col-md-6 mb-3">
-                      <label for="date" class="form-label">Preferred Date *</label>
-                      <input type="date" class="form-control" id="date" required>
+                      <label for="booking-date" class="form-label">Preferred Date *</label>
+                      <input type="date" class="form-control" id="booking-date" required>
                     </div>
                     <div class="col-md-6 mb-3">
-                      <label for="time" class="form-label">Preferred Time *</label>
-                      <input type="time" class="form-control" id="time" required>
+                      <label for="booking-time" class="form-label">Preferred Time *</label>
+                      <input type="time" class="form-control" id="booking-time" required>
                     </div>
                   </div>
                   
                   <div class="mb-4">
-                    <label for="instructions" class="form-label">Special Instructions</label>
-                    <textarea class="form-control" id="instructions" rows="3" placeholder="Any special instructions or notes"></textarea>
+                    <label for="booking-instructions" class="form-label">Special Instructions</label>
+                    <textarea class="form-control" id="booking-instructions" rows="3" placeholder="Any special instructions or notes"></textarea>
                   </div>
                   
                   <button type="submit" class="btn btn-primary w-100">
-                    <i class="fas fa-paper-plane me-2"></i>Send
+                    <i class="fas fa-calendar-check me-2"></i>Book Now
                   </button>
                 </form>
               </div>
