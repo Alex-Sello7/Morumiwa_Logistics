@@ -662,7 +662,7 @@ footer a:hover::after {
   right: 30px;
   width: 50px;
   height: 50px;
-  background-color: var(--secondary-color);
+  background-color: #fdd8353a;
   color: var(--primary-color);
   border-radius: 50%;
   display: flex;
@@ -682,7 +682,7 @@ footer a:hover::after {
 }
 
 .scroll-top:hover {
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color);
   color: var(--light-color);
   transform: translateY(-5px);
 }
@@ -773,7 +773,7 @@ footer a:hover::after {
     border-radius: 10px;
   }
 }
-/* Add to your existing CSS */
+
 #contact .btn-group .btn.active {
   background-color: var(--primary-color);
   color: white;
@@ -800,4 +800,70 @@ footer a:hover::after {
 }
 div.testimonial-rating.mb-3{
   color: var(--secondary-color);
+}
+
+#contact .btn-group {
+  border-radius: 50px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#contact .btn-group .btn {
+  border-radius: 0;
+  padding: 12px 24px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+#contact .btn-group .btn:first-child {
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+}
+
+#contact .btn-group .btn:last-child {
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+#contact .btn-group .btn-outline-primary {
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+#contact .btn-group .btn-outline-primary:hover,
+#contact .btn-group .btn-outline-primary.active {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.is-invalid {
+  border-color: #dc3545 !important;
+}
+
+.is-valid {
+  border-color: #28a745 !important;
+}
+
+.invalid-feedback {
+  display: none;
+  color: #dc3545;
+  font-size: 0.875em;
+}
+
+.was-validated .form-control:invalid ~ .invalid-feedback {
+  display: block;
+}
+
+/* Alert styles */
+.alert {
+  display: none;
+  margin-top: 20px;
+}
+
+/* Character counter styles */
+.form-text {
+  text-align: right;
+  font-size: 0.875rem;
+  color: #6c757d;
 }
