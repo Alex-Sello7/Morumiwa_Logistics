@@ -632,7 +632,7 @@ footer a::after {
   transition: width 0.3s ease;
 }
 
-footer a:hover::after {
+footer a:hover:not(.social-icons a)::after {
   width: 100%;
 }
 
