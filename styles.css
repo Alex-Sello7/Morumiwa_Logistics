@@ -530,67 +530,6 @@ textarea.form-control {
   font-weight: 500;
 }
 
-/* Timeline */
-.timeline {
-  position: relative;
-  padding: 0;
-  list-style: none;
-}
-
-.timeline::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  width: 2px;
-  margin-left: -1px;
-  background-color: #e9ecef;
-}
-
-.timeline-item {
-  position: relative;
-  margin-bottom: 50px;
-  min-height: 50px;
-}
-
-.timeline-item::after {
-  content: '';
-  display: table;
-  clear: both;
-}
-
-.timeline-panel {
-  position: relative;
-  float: left;
-  width: 46%;
-  padding: 20px;
-  background-color: var(--light-color);
-  border-radius: 10px;
-  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.05);
-}
-
-.timeline-item:nth-child(even) .极-panel {
-  float: right;
-}
-
-.timeline-image {
-  position: absolute;
-  left: 50%;
-  width: 100px;
-  height: 100px;
-  margin-left: -50px;
-  background-color: var(--primary-color);
-  color: var(--secondary-color);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  font-size: 24px;
-  z-index: 100;
-}
-
 /* Footer */
 footer {
   background-color: var(--primary-color);
@@ -788,6 +727,80 @@ footer a:hover:not(.social-icons a)::after {
 
 .close-btn:hover {
   color: #333;
+}
+/* Fix for list items with icons */
+.list-unstyled li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.list-unstyled li i {
+  flex-shrink: 0;
+  margin-right: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.list-unstyled li:not(:has(i)) {
+  padding-left: 1.875rem; /* Match icon width + spacing */
+}
+
+/* Uniform pricing card heights */
+.pricing-table {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.pricing-header,
+.pricing-features,
+.pricing-footer {
+  flex-shrink: 0;
+}
+
+.pricing-features {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.pricing-features ul {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+/* Ensure all pricing cards have the same height */
+.pricing .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.pricing .col-lg-4 {
+  display: flex;
+}
+.pricing-header {
+  min-height: 180px; /* Adjust as needed */
+}
+
+.pricing-features {
+  min-height: 250px; /* Adjust as needed */
+}
+.pricing-features li {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* Media query adjustments for mobile */
+@media (max-width: 768px) {
+  .pricing .col-lg-4 {
+    margin-bottom: 2rem;
+  }
+  
+  .pricing-features ul {
+    min-height: auto;
+  }
 }
 
 /* Media query for mobile devices */
