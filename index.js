@@ -1,3 +1,4 @@
+// index.js
 document.addEventListener('DOMContentLoaded', function() {
   // Initialize all functions
   initNavbarScroll();
@@ -6,34 +7,29 @@ document.addEventListener('DOMContentLoaded', function() {
   initServicesTabs();
   initCounter();
   initContactTabs();
-  initBootstrapTabs(); // Add this for Bootstrap tab functionality
+  initFormSubmissions();
+  initFormValidation();
+  initCharacterCounters();
+  initA2HS();
 });
 
 /* SPLASH SCREEN */
-  window.addEventListener("load", () => {
-    // Set cursor to wait for the entire page during splash
-    document.body.style.cursor = 'wait';
+window.addEventListener("load", () => {
+  // Set cursor to wait for the entire page during splash
+  document.body.style.cursor = 'wait';
+  
+  setTimeout(() => {
+    const splash = document.getElementById('splash');
+    splash.style.animation = "fadeOut 1s forwards";
+    
+    // Immediately restore default cursor when splash starts fading
+    document.body.style.cursor = 'default';
     
     setTimeout(() => {
-      const splash = document.getElementById('splash');
-      splash.style.animation = "fadeOut 1s forwards";
-      
-      // Immediately restore default cursor when splash starts fading
-      document.body.style.cursor = 'default';
-      
-      setTimeout(() => {
-        splash.style.display = "none";
-      }, 1000);
+      splash.style.display = "none";
     }, 1000);
-  });
-
-// Initialize Bootstrap tabs
-function initBootstrapTabs() {
-  const triggerTabList = [].slice.call(document.querySelectorAll('#contact button[data-bs-toggle="tab"]'));
-  triggerTabList.forEach(function (triggerEl) {
-    new bootstrap.Tab(triggerEl);
-  });
-}
+  }, 1000);
+});
 
 // Navbar Scroll Effect
 function initNavbarScroll() {
@@ -192,9 +188,10 @@ function initCounter() {
   });
 }
 
-// Contact tab button styling
+// Contact tab functionality
 function initContactTabs() {
   const contactTabButtons = document.querySelectorAll('#contact .btn-group .btn');
+  const tabPanes = document.querySelectorAll('#contact .tab-pane');
   
   if (contactTabButtons.length === 0) return;
   
@@ -209,6 +206,20 @@ function initContactTabs() {
       // Add active class to clicked button
       this.classList.remove('btn-outline-primary');
       this.classList.add('active', 'btn-primary');
+      
+      // Show the corresponding tab content
+      const targetId = this.getAttribute('data-bs-target');
+      const targetPane = document.querySelector(targetId);
+      
+      if (targetPane) {
+        // Hide all panes
+        tabPanes.forEach(pane => {
+          pane.classList.remove('show', 'active');
+        });
+        
+        // Show the target pane
+        targetPane.classList.add('show', 'active');
+      }
     });
   });
   
@@ -218,4 +229,343 @@ function initContactTabs() {
     contactTabButtons[0].classList.remove('btn-outline-primary');
     contactTabButtons[0].classList.add('active', 'btn-primary');
   }
+}
+
+// Initialize form validation
+function initFormValidation() {
+  // Add event listeners to validate fields on input
+  const textInputs = document.querySelectorAll('#contact input[type="text"]');
+  textInputs.forEach(input => {
+    if (input.id.includes('name') || input.id.includes('firstname') || input.id.includes('lastname')) {
+      input.addEventListener('input', function() {
+        // Capitalize first letter
+        if (this.value.length === 1) {
+          this.value = this.value.toUpperCase();
+        }
+        validateField(this);
+      });
+    } else {
+      input.addEventListener('input', function() {
+        validateField(this);
+      });
+    }
+  });
+  
+  const emailInputs = document.querySelectorAll('#contact input[type="email"]');
+  emailInputs.forEach(input => {
+    input.addEventListener('input', function() {
+      validateField(this);
+    });
+  });
+  
+  const phoneInputs = document.querySelectorAll('#contact input[type="tel"]');
+  phoneInputs.forEach(input => {
+    input.addEventListener('input', function() {
+      validateField(this);
+    });
+  });
+  
+  const textareas = document.querySelectorAll('#contact textarea');
+  textareas.forEach(textarea => {
+    textarea.addEventListener('input', function() {
+      validateField(this);
+    });
+  });
+  
+  const selects = document.querySelectorAll('#contact select');
+  selects.forEach(select => {
+    select.addEventListener('change', function() {
+      validateField(this);
+    });
+  });
+}
+
+// Initialize character counters
+function initCharacterCounters() {
+  const messageContent = document.getElementById('message-content');
+  const bookingInstructions = document.getElementById('booking-instructions');
+  
+  if (messageContent) {
+    messageContent.addEventListener('input', function() {
+      const charCountElement = document.getElementById('message-chars');
+      if (charCountElement) {
+        charCountElement.textContent = this.value.length;
+      }
+    });
+  }
+  
+  if (bookingInstructions) {
+    bookingInstructions.addEventListener('input', function() {
+      const charCountElement = document.getElementById('booking-chars');
+      if (charCountElement) {
+        charCountElement.textContent = this.value.length;
+      }
+    });
+  }
+}
+
+// Form submission handlers
+function initFormSubmissions() {
+  const messageForm = document.getElementById('messageForm');
+  const bookingForm = document.getElementById('bookingForm');
+  
+  if (messageForm) {
+    messageForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      if (validateForm(this)) {
+        submitForm('message', collectFormData(this));
+      }
+    });
+  }
+  
+  if (bookingForm) {
+    bookingForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      if (validateForm(this)) {
+        submitForm('booking', collectFormData(this));
+      }
+    });
+  }
+}
+
+// Validate a single field
+function validateField(field) {
+  // Clear previous validation states
+  field.classList.remove('is-invalid', 'is-valid');
+  
+  // Special validation for name fields
+  if ((field.id.includes('name') || field.id.includes('firstname') || field.id.includes('lastname')) && field.value) {
+    const isValidName = /^[A-Z][a-zA-Z]*$/.test(field.value);
+    if (!isValidName) {
+      field.classList.add('is-invalid');
+      return false;
+    }
+  }
+  
+  // Special validation for phone fields
+  if (field.type === 'tel' && field.value && !field.value.startsWith('+27')) {
+    field.classList.add('is-invalid');
+    return false;
+  }
+  
+  // Standard HTML5 validation
+  if (field.checkValidity()) {
+    field.classList.add('is-valid');
+    return true;
+  } else {
+    field.classList.add('is-invalid');
+    return false;
+  }
+}
+
+// Validate entire form
+function validateForm(form) {
+  let isValid = true;
+  
+  // Validate all required fields
+  const requiredFields = form.querySelectorAll('[required]');
+  requiredFields.forEach(field => {
+    if (!validateField(field)) {
+      isValid = false;
+    }
+  });
+  
+  // Validate pattern fields (even if not required)
+  const patternFields = form.querySelectorAll('[pattern]');
+  patternFields.forEach(field => {
+    if (field.value && !validateField(field)) {
+      isValid = false;
+    }
+  });
+  
+  return isValid;
+}
+
+// Collect form data
+function collectFormData(form) {
+  const formData = {};
+  const formElements = form.elements;
+  
+  for (let i = 0; i < formElements.length; i++) {
+    const element = formElements[i];
+    if (element.name && element.value) {
+      formData[element.id] = element.value;
+    }
+  }
+  
+  // Add form type
+  formData.formType = form.id.replace('Form', '');
+  
+  return formData;
+}
+
+// Submit form via AJAX
+function submitForm(formType, formData) {
+  // Show loading state
+  const submitButton = document.querySelector(`#${formType}Form button[type="submit"]`);
+  const originalText = submitButton.innerHTML;
+  submitButton.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Processing...';
+  submitButton.disabled = true;
+  
+  // Create a JSON server endpoint (simulated)
+  const endpoint = 'https://jsonplaceholder.typicode.com/posts'; // Using a test API
+  
+  // Prepare the data for submission
+  const submissionData = {
+    title: `${formType} form submission`,
+    body: JSON.stringify(formData),
+    userId: 1
+  };
+  
+  // Make AJAX request
+  fetch(endpoint, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(submissionData)
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.json();
+  })
+  .then(data => {
+    // Simulate successful submission (in a real app, you'd check the response)
+    showResponse('success', `Your ${formType === 'message' ? 'message has been sent' : 'errand has been booked'}. We will contact you shortly!`);
+    
+    // Reset the form
+    document.getElementById(`${formType}Form`).reset();
+    
+    // Reset character counters
+    if (formType === 'message') {
+      const charCountElement = document.getElementById('message-chars');
+      if (charCountElement) charCountElement.textContent = '0';
+    } else {
+      const charCountElement = document.getElementById('booking-chars');
+      if (charCountElement) charCountElement.textContent = '0';
+    }
+  })
+  .catch(error => {
+    console.error('Error:', error);
+    showResponse('error', 'There was an error processing your request. Please try again later.');
+  })
+  .finally(() => {
+    // Restore button state
+    submitButton.innerHTML = originalText;
+    submitButton.disabled = false;
+  });
+}
+
+// Show response message
+function showResponse(type, message) {
+  // Create response elements if they don't exist
+  let responseAlert = document.getElementById('responseAlert');
+  let errorAlert = document.getElementById('errorAlert');
+  
+  if (!responseAlert) {
+    responseAlert = document.createElement('div');
+    responseAlert.id = 'responseAlert';
+    responseAlert.className = 'alert alert-success mt-3';
+    responseAlert.style.display = 'none';
+    responseAlert.innerHTML = '<i class="fas fa-check-circle me-2"></i><span id="responseMessage"></span>';
+    document.querySelector('#contact .container').appendChild(responseAlert);
+  }
+  
+  if (!errorAlert) {
+    errorAlert = document.createElement('div');
+    errorAlert.id = 'errorAlert';
+    errorAlert.className = 'alert alert-danger mt-3';
+    errorAlert.style.display = 'none';
+    errorAlert.innerHTML = '<i class="fas fa-exclamation-circle me-2"></i><span id="errorMessage"></span>';
+    document.querySelector('#contact .container').appendChild(errorAlert);
+  }
+  
+  if (type === 'success') {
+    document.getElementById('responseMessage').textContent = message;
+    responseAlert.style.display = 'block';
+    errorAlert.style.display = 'none';
+  } else {
+    document.getElementById('errorMessage').textContent = message;
+    errorAlert.style.display = 'block';
+    responseAlert.style.display = 'none';
+  }
+  
+  // Hide alerts after 5 seconds
+  setTimeout(() => {
+    responseAlert.style.display = 'none';
+    errorAlert.style.display = 'none';
+  }, 5000);
+}
+
+// Fade-in animation for elements
+function initFadeInAnimations() {
+  const fadeElements = document.querySelectorAll('.fade-in');
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+  
+  fadeElements.forEach(element => {
+    observer.observe(element);
+  });
+}
+
+// A2HS - for later use
+function initA2HS() {
+  const a2hsPrompt = document.getElementById('a2hs-prompt');
+  const installBtn = document.getElementById('installBtn');
+  const closeBtn = document.getElementById('closeA2HS');
+  
+  // Only proceed if elements exist
+  if (!a2hsPrompt || !installBtn || !closeBtn) return;
+  
+  let deferredPrompt;
+
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    
+    // Show the custom install prompt
+    setTimeout(() => {
+      a2hsPrompt.style.display = 'block';
+      setTimeout(() => {
+        a2hsPrompt.classList.add('show');
+      }, 10);
+    }, 3000);
+  });
+
+  installBtn.addEventListener('click', async () => {
+    if (!deferredPrompt) return;
+    
+    deferredPrompt.prompt();
+    const { outcome } = await deferredPrompt.userChoice;
+    console.log(`User response to the install prompt: ${outcome}`);
+    deferredPrompt = null;
+    a2hsPrompt.classList.remove('show');
+  });
+
+  closeBtn.addEventListener('click', () => {
+    a2hsPrompt.classList.remove('show');
+    localStorage.setItem('a2hsDismissed', 'true');
+  });
+
+  // Check if user has previously dismissed the prompt
+  if (localStorage.getItem('a2hsDismissed') === 'true') {
+    a2hsPrompt.style.display = 'none';
+  }
+}
+
+// Register service worker for PWA functionality
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js')
+      .then(reg => console.log('Service Worker registered:', reg))
+      .catch(err => console.log('Service Worker registration failed:', err));
+  });
 }
