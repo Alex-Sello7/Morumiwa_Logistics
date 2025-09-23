@@ -82,7 +82,7 @@ body {
 
 /* Hero Section */
 .hero {
-  background-image: linear-gradient(rgba(2, 42, 61, 0.904), var(--primary-dark)), url('./imgs/img1.jpg');
+  background-image: linear-gradient(rgba(50, 100, 140, 0.7), var(--primary-dark)), url('./imgs/img1.jpg');
   background-size: 2800px;
   background-position: center;
   background-repeat: no-repeat;
