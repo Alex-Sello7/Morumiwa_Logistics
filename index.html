@@ -20,20 +20,20 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="shortcut icon" href="imgs/favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="imgs/real_logo.png" type="image/x-icon">
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
   <div id="splash">
-    <img src="imgs/Morumiwa_logo.png" style="border: 0px;" alt="Morumiwa Logo">
+    <img src="imgs/real_logo_splash.png" style="border: 0px;" alt="Morumiwa Logo">
 
   </div>
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
       <a class="navbar-brand" href="index.html">
-        <span class="fw-bold text-warning">Morumiwa <span class="text-white">The Errand Guys</span></span>
+        <span class="fw-bold text-warning" style="color: var(--secondary-color);">Morumiwa <span class="text-white">The Errand Guys</span></span>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
@@ -41,7 +41,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link active" href="#home">
+            <a class="nav-link active" href="#services">
               <i class="fas fa-home me-1"></i> Home
             </a>
           </li>
@@ -61,18 +61,13 @@
             </a>
             <ul class="dropdown-menu" aria-labelledby="moreDropdown">
               <li>
-                <a class="dropdown-item" href="#services">
-                  <i class="fas fa-concierge-bell me-2"></i> Services
+                <a class="dropdown-item" href="#testimonials">
+                  <i class="fas fa-tags me-2"></i> Testimonials
                 </a>
               </li>
               <li>
                 <a class="dropdown-item" href="#pricing">
-                  <i class="fas fa-tags me-2"></i> Pricing
-                </a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="#testimonials">
-                  <i class="fas fa-comments me-2"></i> Testimonials
+                  <i class="fas fa-comments me-2"></i> Pricing
                 </a>
               </li>
             </ul>
@@ -81,501 +76,192 @@
       </div>
     </div>
   </nav>
-
-  <!-- Hero Section -->
-  <section class="hero" id="home">
+  <!-- Services Hero Section -->
+  <section id="services" class="services-hero">
     <div class="container">
-      <div class="row">
-        <div class="col-lg-8">
-          <h1 class="mb-4">Fast & Reliable Logistics Solutions</h1>
-          <p>We deliver your packages with care and efficiency. Trust us to
-            handle your logistics needs with the utmost
-            professionalism.</p>
-          <div class="d-flex gap-3">
-            <a href="#contact" class="btn btn-primary"> Contact Us</a>
-            <a href="#services" class="btn btn-outline"> Our Services</a>
-          </div>
-        </div>
-        <p style="text-align: center; margin-top: 100px;">Your Errand Guy At
-          Your Service</p>
-      </div>
-    </div>
-  </section>
-  <a href="#features" class="scroll-down">
-    <i class="fas fa-chevron-down"></i>
-
-  </a>
-
-  <!-- Features Section -->
-  <section class="features" id="features">
-    <div class="container">
-      <div class="section-title mb-4">
-        <h2>Connect With Us</h2>
-        <p>
-          We pride ourselves on providing exceptional service that sets us
-          apart from the competition.
-        </p>
-      </div>
-
-      <!-- Contact Information -->
-    <div class="row mt-5">
-      <div class="col-12">
-        <div class="contact-info">
-          <div class="row">
-            <div class="col-md-4 mb-4">
-              <div class="text-center">
-                <i class="fab fa-whatsapp fa-2x text-primary mb-3"></i>
-                <h5>WhatsApp</h5>
-                <p><a href="https://wa.me/27678102248?text=Hello" class="text-decoration-none" target="_blank">+27 67 810 2248</a></p>
-                </a>
-              </div>
-            </div>
-            
-            <div class="col-md-4 mb-4">
-              <div class="text-center">
-                <i class="fas fa-phone-alt fa-2x text-primary mb-3"></i>
-                <h5>Call</h5>
-                <p><a href="tel:+27678102248" class="text-decoration-none">+27 67 810 2248</a></p>
-              </div>
-            </div>
-            
-            <div class="col-md-4 mb-4">
-              <div class="text-center">
-                <i class="fas fa-envelope fa-2x text-primary mb-3"></i>
-                <h5>Email</h5>
-                <p><a href="mailto:info@morumiwa.co.za" class="text-decoration-none">info@morumiwa.co.za</a></p>
-              </div>
-            </div>
-          </div>
-          
-          <div class="text-center mt-4">
-      <h5>
-        <i class="fas fa-clock me-2"></i>
-        Business Hours
-      </h5>
-      <p>Monday - Friday: 07:00 - 19:00<br>Saturday: 07:00 AM - 18:00<br>Sunday: 09:00 AM - 14:00</p>
-      <p>Contact us for help outside our normal operational hours.</p>
-    </div>
-  </section>
-
-  <!-- Features Section -->
-  <section class="features" id="features">
-    <div class="container">
-      <div class="section-title mb-4">
-        <h2>Why Choose Us</h2>
-        <p>We pride ourselves on providing exceptional service that sets us
-          apart from the competition.</p>
-      </div>
-
-      <div class="row">
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="feature-box">
-            <div class="feature-icon">
-              <i class="fas fa-rocket"></i>
-            </div>
-            <h4>Fast & Reliable</h4>
-            <p>We understand the importance of time in logistics. Our team
-              ensures your packages arrive at their
-              destination promptly and safely.</p>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="feature-box">
-            <div class="feature-icon">
-              <i class="fas fa-shield-alt"></i>
-            </div>
-            <h4>Trustworthy Handling</h4>
-            <p>Your packages are handled with care. We treat each item as if
-              it were our own, ensuring it arrives in
-              perfect condition.</p>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="feature-box">
-            <div class="feature-icon">
-              <i class="fas fa-tags"></i>
-            </div>
-            <h4>Transparent Pricing</h4>
-            <p>No hidden fees or unexpected charges. We provide clear and
-              competitive pricing for all our services.</p>
-          </div>
+      <div class="services-hero-content">
+        <h1>Premium Errand Services</h1>
+        <p>Your time is precious. Let us handle your errands with speed, reliability, and care. Discover how our
+          tailored services can simplify your life.</p>
+        <div class="hero-buttons">
+          <a href="#contact" class="btn btn-primary">Book an Errand Now</a>
+          <a href="#pricing" class="btn btn-outline-light">View Our Pricing</a>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- Testimonials Section -->
-  <section id="testimonials" class="py-5 testimonials">
-    <div class="container">
-      <div class="text-center mb-5">
-        <h2 style="color: white;">What Our Clients Say</h2>
-        <div class="accent-line"></div>
-        <p class="lead" style="color: white;">Trusted by individuals and
-          businesses everywhere</p>
-      </div>
-      <div class="row">
-        <div class="col-md-4 mb-4">
-          <div class="card testimonial-card h-100"
-            style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
-            <div class="card-body">
-              <div class="testimonial-rating mb-3">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-              </div>
-              <p class="testimonial-text">"Service ya Morumiwa e best thata especially for my business cos it’s 
-                always a call away and very convenient 🤞🏾unfortunately I don’t have a picture to prove but 
-                hey and bonus kore my daughter is also using the school shuttle of Morumiwa🥳🥳"</p>
-              <div class="testimonial-author d-flex align-items-center mt-4">
-                <div class="testimonial-avatar bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3">
-                  CM
+      <div class="services-slideshow-container">
+        <div class="services-track">
+          <!-- Individual Errands -->
+          <div class="service-slide active" data-slide="0">
+            <div class="card service-card">
+              <div class="service-card-header">
+                <div class="service-icon">
+                  <i class="fas fa-user-circle"></i>
                 </div>
-                <div>
-                  <h6 class="mb-0">Carly Makgamatha</h6>
-                  <small class="text-muted">Regular Customer</small>
-                  <small class="text-muted d-block">Ga-Rankuwa</small>
+                <h3 class="service-card-title">Personal Errands</h3>
+                <p>For Your Everyday Life</p>
+              </div>
+              <div class="service-card-body">
+                <p class="service-card-text">This is for individuals and families who need to save time or require
+                  assistance due to mobility, illness, or a busy schedule.</p>
+                <div class="service-features">
+                  <div class="service-feature">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Medicine & Prescription: Collection from the pharmacy and delivery to your home.</span>
+                  </div>
+                  <div class="service-feature">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Retail Exchanges & Returns: Taking items back to stores for returns or size exchanges</span>
+                  </div>
+                  <div class="service-feature">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Queueing Service: Standing in line for you at government departments, ticket offices, or
+                      popular stores.</span>
+                  </div>
+                </div>
+                <div class="service-cta">
+                  <a href="#contact" class="btn btn-primary w-100">Get Personal Assistance</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Business Errands -->
+          <div class="service-slide" data-slide="1">
+            <div class="card service-card">
+              <div class="service-card-header">
+                <div class="service-icon">
+                  <i class="fas fa-briefcase"></i>
+                </div>
+                <h3 class="service-card-title">Business Errands</h3>
+                <p>Your Business Support Partner</p>
+              </div>
+              <div class="service-card-body">
+                <p class="service-card-text">This B2B service is aimed at small to medium-sized businesses that need a
+                  reliable partner to handle operational tasks, freeing them up to focus on their core activities.</p>
+                <div class="service-features">
+                  <div class="service-feature">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Event & Staff Support: Providing an extra set of hands for short-staffed businesses during
+                      events.</span>
+                  </div>
+                  <div class="service-feature">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Local Courier Service: Urgent, same-day delivery of documents, small packages, or products to
+                      clients.</span>
+                  </div>
+                  <div class="service-feature">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Post-Box Clearing: Regular collection of mail from the company's post-box.</span>
+                  </div>
+                </div>
+                <div class="service-cta">
+                  <a href="#contact" class="btn btn-primary w-100">Boost Your Business</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Institutional Support -->
+          <div class="service-slide" data-slide="2">
+            <div class="card service-card">
+              <div class="service-card-header">
+                <div class="service-icon">
+                  <i class="fas fa-hospital"></i>
+                </div>
+                <h3 class="service-card-title">Institutional Support</h3>
+                <p>Care & Comfort Services</p>
+              </div>
+              <div class="service-card-body">
+                <p class="service-card-text">This specialised service focuses on providing a compassionate, human
+                  connection for people in hospitals, clinics, retirement communities, or student residences.</p>
+                <div class="service-features">
+                  <div class="service-feature">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Home-to-Hospital Delivery: Delivering warm meals, specific toiletries, phone chargers, books,
+                      blankets, and other personal items from home.</span>
+                  </div>
+                  <div class="service-feature">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Entertainment: Picking up magazines, newspapers, puzzle books, or dropping off/charging
+                      devices.</span>
+                  </div>
+                  <div class="service-feature">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Gift & Flower Delivery: Delivering flowers, balloons, or gifts from friends and family who
+                      can't visit.</span>
+                  </div>
+                </div>
+                <div class="service-cta">
+                  <a href="#contact" class="btn btn-primary w-100">Request Support</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Premium Services -->
+          <div class="service-slide" data-slide="3">
+            <div class="card service-card">
+              <div class="service-card-header">
+                <div class="service-icon">
+                  <i class="fas fa-crown"></i>
+                </div>
+                <h3 class="service-card-title">Premium Services</h3>
+                <p>The Executive Assistant</p>
+              </div>
+              <div class="service-card-body">
+                <p class="service-card-text">This is a high-trust, high-value category for critical or sensitive tasks
+                  that require the utmost professionalism, discretion, and reliability.</p>
+                <div class="service-features">
+                  <div class="service-feature">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Home & Pet Sitting Coordination: Being the point of contact for a house sitter or checking in
+                      on a property for clients who are travelling.</span>
+                  </div>
+                  <div class="service-feature">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Property Management Support: Key handover services for rental properties or Airbnbs, and
+                      conducting basic entry/exit inspections.</span>
+                  </div>
+                  <div class="service-feature">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Vehicle Maintenance: Taking a client's car for its annual service, a tyre change, or for a car
+                      wash and detailing.</span>
+                  </div>
+                </div>
+                <div class="service-cta">
+                  <a href="#contact" class="btn btn-primary w-100">Experience Premium Service</a>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-md-4 mb-4">
-          <div class="card testimonial-card h-100"
-            style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
-            <div class="card-body">
-              <div class="testimonial-rating mb-3">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-              </div>
-              <p class="testimonial-text">"I'm really impressed with the service I receive from Morumiwa. 
-                Their delivery team is prompt, courteous, and efficient. They're always on time, which is fantastic. 
-                Plus, their communication is top-notch - they keep me updated every step of the way. 
-                They consistently exceed my expectations in every way. I highly recommend Morumiwa for all your 
-                delivery needs - they're reliable, trustworthy, and truly exceptional."</p>
-              <div class="testimonial-author d-flex align-items-center mt-4">
-                <div class="testimonial-avatar bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3">
-                  KM
-                </div>
-                <div>
-                  <h6 class="mb-0">Kearabilwe Moabi</h6>
-                  <small class="text-muted">Happy Customer</small>
-                  <small class="text-muted d-block">Zone 3, Ga-Rankuwa</small>
-                </div>
-              </div>
-            </div>
-          </div>
+
+        <!-- Navigation Controls -->
+        <button class="slideshow-nav prev-nav" id="prevService">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="slideshow-nav next-nav" id="nextService">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+
+        <!-- Indicators -->
+        <div class="slideshow-indicators">
+          <span class="indicator active" data-slide="0"></span>
+          <span class="indicator" data-slide="1"></span>
+          <span class="indicator" data-slide="2"></span>
+          <span class="indicator" data-slide="3"></span>
         </div>
-        <div class="col-md-4 mb-4">
-          <div class="card testimonial-card h-100"
-            style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
-            <div class="card-body">
-              <div class="testimonial-rating mb-3">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-              </div>
-              <p class="testimonial-text">
-                "When my father was in the hospital, Morumiwa delivered home-cooked meals and personal items. 
-                Their compassionate service made a difficult time easier."
-              </p>
-              <div class="testimonial-author d-flex align-items-center mt-4">
-                <div class="testimonial-avatar bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3">
-                  DW
-                </div>
-                <div>
-                  <h6 class="mb-0">Lerato Mokwena</h6>
-                  <small class="text-muted d-block">Morumiwa User</small>
-                  <small class="text-muted d-block">Ga-Rankuwa</small>
-                </div>
-              </div>
-            </div>
-          </div>
+
+        <!-- Auto-play toggle -->
+        <div class="autoplay-control">
+          <button id="toggleAutoplay" class="btn btn-sm">
+            <i class="fas fa-pause"></i> Pause Auto-play
+          </button>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- Pricing Section -->
-  <section class="pricing" id="pricing">
-    <div class="container">
-      <div class="section-title mb-4">
-        <h2>Our Pricing</h2>
-        <p>Transparent and competitive pricing for all your logistics needs. No
-          hidden fees, just clear and
-          straightforward rates.</p>
-      </div>
-
-      <div class="row">
-        <div class="col col-lg-3">
-          <div class="pricing-table">
-            <div class="pricing-header">
-              <h4>Personal Errands</h4>
-              <div class="price">R70<span class="small">/base rate</span></div>
-              <p>Within 10km radius</p>
-            </div>
-            <div class="pricing-features">
-              <ul>
-                <li><i class="fas fa-check"></i> Grocery Shopping</li>
-                <li><i class="fas fa-check"></i> Food Delivery</li>
-                <li><i class="fas fa-check"></i> Pharmacy Collection</li>
-                <li><i class="fas fa-info"></i> Additional For Complex
-                  Tasks</li>
-
-              </ul>
-            </div>
-            <div class="pricing-footer">
-              <a href="#contact" class="btn btn-primary">Select Plan</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col col-lg-3">
-          <div class="pricing-table">
-            <div class="pricing-header">
-              <h4>Business Errands</h4>
-              <div class="price">R250<span class="small">/starting
-                  rate</span></div>
-              <p>Courier Services</p>
-            </div>
-            <div class="pricing-features">
-              <ul>
-                <li><i class="fas fa-check"></i> Staff Transport</li>
-                <li><i class="fas fa-check"></i> Bank Deposits</li>
-                <li><i class="fas fa-check"></i> Courier Services</li>
-                <li><i class="fas fa-info"></i> Custom Quotes Avaiable</li>
-              </ul>
-            </div>
-            <div class="pricing-footer">
-            <a href="#contact" class="btn btn-primary">Select Plan</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col col-lg-3">
-          <div class="pricing-table">
-            <div class="pricing-header">
-              <h4>Institutional Support</h4>
-              <div class="price">R50<span class="small">/starting
-                  rate</span></div>
-              <p>Package Delivery</p>
-            </div>
-            <div class="pricing-features">
-              <ul>
-                <li><i class="fas fa-check"></i> Food Delivery from R50</li>
-                <li><i class="fas fa-check"></i> Medication from R120</li>
-                <li><i class="fas fa-check"></i> Personal Errands from R70</li>
-                <li><i class="fas fa-check"></i> Compassionate Service</li>
-                <li><i class="fas fa-info"></i> Custom Quotes Avaiable</li>
-              </ul>
-            </div>
-            <div class="pricing-footer">
-              <a href="#contact" class="btn btn-primary">Select Plan</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col col-lg-3">
-          <div class="pricing-table">
-            <div class="pricing-header">
-              <h4>Premium Services</h4>
-              <div class="price">
-                R ?<span class="small">/service</span>
-                </div>
-              <p>Service Dependent Rate</p>
-            </div>
-            <div class="pricing-features">
-              <ul>
-                <li><i class="fas fa-check"></i> Tender Briefing Attendance</li>
-                <li><i class="fas fa-check"></i> Relocation Assistance</li>
-                <li><i class="fas fa-check"></i> Government Depts Errands</li>
-                <li><i class="fas fa-check"></i> Parent Meeting Attendance</li>
-                <li><i class="fas fa-info"></i> Custom Quotes Avaiable</li>
-              </ul>
-            </div>
-            <div class="pricing-footer">
-              <a href="#contact" class="btn btn-primary">Select Plan</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-   <!-- Contact section-->
-  <section id="contact" class="contact">
-    <div class="container">
-      <div class="section-title mb-4">
-        <h2>Contact Us</h2>
-        <p>Get in touch with our team for any inquiries or book our services directly.</p>
-      </div>
-      
-      <div class="row">
-        <div class="col-lg-8 mb-4 mb-lg-0 mx-auto">
-          <!-- Form Selection Buttons -->
-          <div class="d-flex justify-content-center mb-4">
-            <div class="btn-group" role="group" aria-label="Form selection">
-              <button type="button" class="btn btn-primary active" id="message-tab" data-bs-toggle="tab" data-bs-target="#message" role="tab">
-                <i class="fas fa-envelope me-2"></i>Send Message
-              </button>
-              <button type="button" class="btn btn-outline-primary" id="booking-tab" data-bs-toggle="tab" data-bs-target="#booking" role="tab">
-                <i class="fas fa-calendar-check me-2"></i>Book an Errand
-              </button>
-            </div>
-          </div>
-          
-          <div class="card shadow">
-            <div class="card-body p-4">
-              
-              <div class="tab-content" id="contactTabContent">
-                <!-- Message Form -->
-                <div class="tab-pane fade show active" id="message" role="tabpanel" aria-labelledby="message-tab">
-                  <form id="messageForm">
-                    <div class="row">
-                      <div class="col-md-6 mb-3">
-                        <label for="message-name" class="form-label">Full Name *</label>
-                        <input type="text" class="form-control" id="message-name" placeholder="Your Name" required>
-                      </div>
-                      <div class="col-md-6 mb-3">
-                        <label for="message-email" class="form-label">Email Address *</label>
-                        <input type="email" class="form-control" id="message-email" placeholder="Your Email" required>
-                      </div>
-                    </div>
-                    
-                    <div class="mb-3">
-                      <label for="message-subject" class="form-label">Subject *</label>
-                      <input type="text" class="form-control" id="message-subject" placeholder="Message Subject" required>
-                    </div>
-                    
-                    <div class="mb-4">
-                      <label for="message-content" class="form-label">Message *</label>
-                      <textarea class="form-control" id="message-content" rows="5" placeholder="Your message..." required></textarea>
-                    </div>
-                    
-                    <button type="submit" class="btn btn-primary w-100">
-                      <i class="fas fa-paper-plane me-2"></i>Send Message
-                    </button>
-                  </form>
-                </div>
-                
-                <!-- Booking Form -->
-                <div class="tab-pane fade" id="booking" role="tabpanel" aria-labelledby="booking-tab">
-                  <form id="bookingForm">
-                    <div class="row">
-                      <div class="col-md-6">
-                        <label for="booking-name" class="form-label">Full Name *</label>
-                        <input type="text" class="form-control" id="booking-name" placeholder="Your Name" required>
-                      </div>
-                      <div class="col-md-6">
-                        <label for="booking-email" class="form-label">Email Address *</label>
-                        <input type="email" class="form-control" id="booking-email" placeholder="Your Email" required>
-                      </div>
-                    </div>
-                    
-                    <div class="row">
-                      <div class="col-md-6">
-                        <label for="booking-phone" class="form-label">Phone Number *</label>
-                        <input type="tel" class="form-control" id="booking-phone" placeholder="Your Phone" required>
-                      </div>
-                      <div class="col-md-6">
-                        <label for="booking-service" class="form-label">Service Type *</label>
-                        <select class="form-select" id="booking-service" required>
-                          <option value="" selected disabled>Select Service</option>
-                          <option value="personal">Personal</option>
-                          <option value="business">Business</option>
-                          <option value="institutional">Institutional Support</option>
-                          <option value="premium">Premium Services</option>
-                        </select>
-                      </div>
-                    </div>
-                    
-                    <div class="row">
-                      <div class="col-md-6">
-                        <label for="booking-pickup" class="form-label">Pickup Location *</label>
-                      <input type="text" class="form-control" id="booking-pickup" placeholder="Pickup Address" required>
-                      </div>
-                      <div class="col-md-6">
-                        <label for="booking-dropoff" class="form-label">Drop-off Location *</label>
-                      <input type="text" class="form-control" id="booking-dropoff" placeholder="Delivery Address" required>
-                      </div>
-                    </div>
-                    
-                    <div class="row">
-                      <div class="col-md-6 mb-3">
-                        <label for="booking-date" class="form-label">Preferred Date *</label>
-                        <input type="date" class="form-control" id="booking-date" required>
-                      </div>
-                      <div class="col-md-6 mb-3">
-                        <label for="booking-time" class="form-label">Preferred Time *</label>
-                        <input type="time" class="form-control" id="booking-time" required>
-                      </div>
-                    </div>
-                    
-                    <div class="mb-4">
-                      <label for="booking-instructions" class="form-label">Special Instructions</label>
-                      <textarea class="form-control" id="booking-instructions" rows="3" placeholder="Any special instructions or notes"></textarea>
-                    </div>
-                    
-                    <button type="submit" class="btn btn-primary w-100">
-                      <i class="fas fa-calendar-check me-2"></i>Book Now
-                    </button>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Contact Information -->
-      <div class="row mt-5">
-        <div class="col-12">
-          <div class="contact-info">
-            <div class="row">
-              <div class="col-md-4 mb-4">
-                <div class="text-center">
-                  <i class="fab fa-whatsapp fa-2x text-primary mb-3"></i>
-                  <h5>WhatsApp</h5>
-                  <p><a href="https://wa.me/27678102248?text=Hello" class="text-decoration-none" target="_blank">+27 67 810 2248</a></p>
-                  </a>
-                </div>
-              </div>
-              
-              <div class="col-md-4 mb-4">
-                <div class="text-center">
-                  <i class="fas fa-phone-alt fa-2x text-primary mb-3"></i>
-                  <h5>Call</h5>
-                  <p><a href="tel:+27678102248" class="text-decoration-none">+27 67 810 2248</a></p>
-                </div>
-              </div>
-              
-              <div class="col-md-4 mb-4">
-                <div class="text-center">
-                  <i class="fas fa-envelope fa-2x text-primary mb-3"></i>
-                  <h5>Email</h5>
-                  <p><a href="mailto:info@morumiwa.co.za" class="text-decoration-none">info@morumiwa.co.za</a></p>
-                </div>
-              </div>
-            </div>
-            
-            <div class="text-center mt-4">
-              <h5><i class="fas fa-clock me-2"></i> Business Hours</h5>
-              <p>Monday - Friday: 07:00 - 19:00<br>Saturday: 07:00 - 18:00<br>Sunday: 09:00 - 14:00</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- About Us Section -->
   <section id="about" class="py-5 about">
 
@@ -584,7 +270,7 @@
       <div class="accent-line mx-auto mb-3"></div>
       <div class="row align-items-center justify-content-center">
         <div class="col-lg-6 mb-4 mb-lg-0">
-          <img src="imgs/Morumiwa_logo.png" alt="About Morumiwa The Errand Guys"
+          <img src="imgs/real_logo.png" alt="About Morumiwa The Errand Guys"
             class="img-fluid rounded shadow mx-auto d-block">
         </div>
         <div class="col-lg-6 ps-lg-5">
@@ -751,128 +437,446 @@
 
     </div>
   </section>
+  <!-- Features Section -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-title mb-4">
+        <h2>Why Choose Us</h2>
+        <p>We pride ourselves on providing exceptional service that sets us
+          apart from the competition.</p>
+      </div>
 
-   <!-- Services Section -->
-<section id="services" class="services">
-  <div class="container">
-    <div class="text-center mb-5">
-      <h2>Our Services</h2>
-      <div class="accent-line"></div>
-      <p class="lead">Morumiwa specializes in running errands for individuals and hospitals. Explore our tailored services below to find the perfect solution for your needs.</p>
-    </div>
-    
-    <div class="row justify-content-center mb-5">
-      <div class="col-md-10">
-        <div class="d-flex flex-wrap justify-content-center gap-2">
-          <button class="btn tab-button active" data-tab="individual">Personal Errands</button>
-          <button class="btn tab-button" data-tab="business">Business Errands</button>
-          <button class="btn tab-button" data-tab="institutional">Institutional Support</button>
-          <button class="btn tab-button" data-tab="premium">Premium Services</button>
+      <div class="row">
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="feature-box">
+            <div class="feature-icon">
+              <i class="fas fa-rocket"></i>
+            </div>
+            <h4>Fast & Reliable</h4>
+            <p>We understand the importance of time in logistics. Our team
+              ensures your packages arrive at their
+              destination promptly and safely.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="feature-box">
+            <div class="feature-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h4>Trustworthy Handling</h4>
+            <p>Your packages are handled with care. We treat each item as if
+              it were our own, ensuring it arrives in
+              perfect condition.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="feature-box">
+            <div class="feature-icon">
+              <i class="fas fa-tags"></i>
+            </div>
+            <h4>Transparent Pricing</h4>
+            <p>No hidden fees or unexpected charges. We provide clear and
+              competitive pricing for all our services.</p>
+          </div>
         </div>
       </div>
     </div>
+  </section>
 
-      <div class="row justify-content-center">
-        <div class="col-md-10">
-          <!-- Individual Errands -->
-          <div id="individual" class="content-section active">
-            <div class="card service-card h-100">
-              <div class="card-body p-3 p-lg-5">
-                <h3 class="card-title text-center mb-4">Personal Errands: "For Your Everyday Life"</h3>
-                <p class="card-text text-center text-muted mb-4">This is for individuals and families who need to save time or require assistance due to mobility, illness, or a busy schedule.
-                </p>
-                <ul class="list-unstyled">
-                  <li class="mb-3">
-                    <i class="fas fa-check-circle text-success me-2"></i>
-                    Medicine & Prescription: Collection from the pharmacy and delivery to your home.</li>
-                  <li class="mb-3"><i class="fas fa-check-circle text-success me-2"></i>
-                    Retail Exchanges & Returns: Taking items back to stores for returns or size exchanges
-                  </li>
-                  <li class="mb-3">
-                    <i class="fas fa-check-circle text-success me-2"></i>
-                    Queueing Service: Standing in line for you at government departments, ticket offices, or popular stores.
-                  </li>
-                </ul>
+ <!-- Testimonials Section -->
+<section id="testimonials" class="testimonials">
+  <div class="testimonials-container">
+    <div class="testimonials-header">
+      <h2>What Our Clients Say</h2>
+      <div class="accent-line"></div>
+      <p>Trusted by individuals and businesses everywhere</p>
+    </div>
+    
+    <div class="testimonials-track">
+      <!-- Testimonial 1 -->
+      <div class="testimonial-card">
+        <div class="testimonial-rating">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <p class="testimonial-text">"Service ya Morumiwa e best thata especially for my business cos it's always a call away and very convenient 🤞🏾unfortunately I don't have a picture to prove but hey and bonus kore my daughter is also using the school shuttle of Morumiwa🥳🥳"</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">CM</div>
+          <div class="testimonial-author-info">
+            <h6>Carly Makgamatha</h6>
+            <small>Regular Customer</small>
+            <small>Ga-Rankuwa</small>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Testimonial 2 -->
+      <div class="testimonial-card">
+        <div class="testimonial-rating">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <p class="testimonial-text">"I'm really impressed with the service I receive from Morumiwa. Their delivery team is prompt, courteous, and efficient. They're always on time, which is fantastic. Plus, their communication is top-notch - they keep me updated every step of the way."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">KM</div>
+          <div class="testimonial-author-info">
+            <h6>Kearabilwe Moabi</h6>
+            <small>Happy Customer</small>
+            <small>Zone 3, Ga-Rankuwa</small>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Testimonial 3 -->
+      <div class="testimonial-card">
+        <div class="testimonial-rating">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <p class="testimonial-text">"When my father was in the hospital, Morumiwa delivered home-cooked meals and personal items. Their compassionate service made a difficult time easier."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">LM</div>
+          <div class="testimonial-author-info">
+            <h6>Lerato Mokwena</h6>
+            <small>Morumiwa User</small>
+            <small>Ga-Rankuwa</small>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Duplicate testimonials for seamless loop -->
+      <div class="testimonial-card">
+        <div class="testimonial-rating">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <p class="testimonial-text">"Service ya Morumiwa e best thata especially for my business cos it's always a call away and very convenient 🤞🏾unfortunately I don't have a picture to prove but hey and bonus kore my daughter is also using the school shuttle of Morumiwa🥳🥳"</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">CM</div>
+          <div class="testimonial-author-info">
+            <h6>Carly Makgamatha</h6>
+            <small>Regular Customer</small>
+            <small>Ga-Rankuwa</small>
+          </div>
+        </div>
+      </div>
+      
+      <div class="testimonial-card">
+        <div class="testimonial-rating">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <p class="testimonial-text">"I'm really impressed with the service I receive from Morumiwa. Their delivery team is prompt, courteous, and efficient. They're always on time, which is fantastic. Plus, their communication is top-notch - they keep me updated every step of the way."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">KM</div>
+          <div class="testimonial-author-info">
+            <h6>Kearabilwe Moabi</h6>
+            <small>Happy Customer</small>
+            <small>Zone 3, Ga-Rankuwa</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  <!-- Features Section -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-title mb-4">
+        <h2>Connect With Us</h2>
+        <p>
+          We pride ourselves on providing exceptional service that sets us
+          apart from the competition.
+        </p>
+      </div>
+
+      <!-- Contact Information -->
+      <div class="row mt-5">
+        <div class="col-12">
+          <div class="contact-info">
+            <div class="row">
+              <div class="col-md-4 mb-4">
+                <div class="text-center">
+                  <i class="fab fa-whatsapp fa-2x text-primary mb-3"></i>
+                  <h5>WhatsApp</h5>
+                  <p><a href="https://wa.me/27678102248?text=Hello" class="text-decoration-none" target="_blank">+27 67
+                      810 2248</a></p>
+                  </a>
+                </div>
               </div>
+
+              <div class="col-md-4 mb-4">
+                <div class="text-center">
+                  <i class="fas fa-phone-alt fa-2x text-primary mb-3"></i>
+                  <h5>Call</h5>
+                  <p><a href="tel:+27678102248" class="text-decoration-none">+27 67 810 2248</a></p>
+                </div>
+              </div>
+
+              <div class="col-md-4 mb-4">
+                <div class="text-center">
+                  <i class="fas fa-envelope fa-2x text-primary mb-3"></i>
+                  <h5>Email</h5>
+                  <p><a href="mailto:info@morumiwa.co.za" class="text-decoration-none">info@morumiwa.co.za</a></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-center mt-4">
+              <h5>
+                <i class="fas fa-clock me-2"></i>
+                Business Hours
+              </h5>
+              <p>Monday - Friday: 07:00 - 19:00<br>Saturday: 07:00 AM - 18:00<br>Sunday: 09:00 AM - 14:00</p>
+              <p>Contact us for help outside our normal operational hours.</p>
+            </div>
+  </section>
+  <!-- Pricing Section -->
+
+    <!-- Pricing Section -->
+  <section class="pricing" id="pricing">
+    <div class="container">
+      <div class="section-title mb-4">
+        <h2>Our Pricing</h2>
+        <p>Transparent and competitive pricing for all your logistics needs. No hidden fees, just clear and straightforward rates.</p>
+      </div>
+
+      <div class="row">
+        <!-- Personal Errands -->
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="pricing-table">
+            <div class="pricing-header">
+              <h4>Personal Errands</h4>
+              <div class="price">R70<span class="small">/base rate</span></div>
+              <p>Within 10km radius</p>
+            </div>
+            <div class="pricing-features">
+              <ul>
+                <li><i class="fas fa-check"></i> Grocery Shopping</li>
+                <li><i class="fas fa-check"></i> Food Delivery</li>
+                <li><i class="fas fa-check"></i> Pharmacy Collection</li>
+                <li><i class="fas fa-info"></i> Additional For Complex Tasks</li>
+              </ul>
+            </div>
+            <div class="pricing-footer">
+              <a href="#contact" class="btn btn-primary">Select Plan</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Business Errands -->
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="pricing-table">
+            <div class="pricing-header">
+              <h4>Business Errands</h4>
+              <div class="price">R250<span class="small">/starting rate</span></div>
+              <p>Courier Services</p>
+            </div>
+            <div class="pricing-features">
+              <ul>
+                <li><i class="fas fa-check"></i> Staff Transport</li>
+                <li><i class="fas fa-check"></i> Bank Deposits</li>
+                <li><i class="fas fa-check"></i> Courier Services</li>
+                <li><i class="fas fa-info"></i> Custom Quotes Available</li>
+              </ul>
+            </div>
+            <div class="pricing-footer">
+              <a href="#contact" class="btn btn-primary">Select Plan</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Institutional Support -->
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="pricing-table">
+            <div class="pricing-header">
+              <h4>Institutional Support</h4>
+              <div class="price">R50<span class="small">/starting rate</span></div>
+              <p>Package Delivery</p>
+            </div>
+            <div class="pricing-features">
+              <ul>
+                <li><i class="fas fa-check"></i> Food Delivery from R50</li>
+                <li><i class="fas fa-check"></i> Medication from R120</li>
+                <li><i class="fas fa-check"></i> Personal Errands from R70</li>
+                <li><i class="fas fa-check"></i> Compassionate Service</li>
+                <li><i class="fas fa-info"></i> Custom Quotes Available</li>
+              </ul>
+            </div>
+            <div class="pricing-footer">
+              <a href="#contact" class="btn btn-primary">Select Plan</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Premium Services -->
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="pricing-table">
+            <div class="pricing-header">
+              <h4>Premium Services</h4>
+              <div class="price">R ?<span class="small">/service</span></div>
+              <p>Service Dependent Rate</p>
+            </div>
+            <div class="pricing-features">
+              <ul>
+                <li><i class="fas fa-check"></i> Tender Briefing Attendance</li>
+                <li><i class="fas fa-check"></i> Relocation Assistance</li>
+                <li><i class="fas fa-check"></i> Government Depts Errands</li>
+                <li><i class="fas fa-check"></i> Parent Meeting Attendance</li>
+                <li><i class="fas fa-info"></i> Custom Quotes Available</li>
+              </ul>
+            </div>
+            <div class="pricing-footer">
+              <a href="#contact" class="btn btn-primary">Select Plan</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Contact section-->
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="section-title mb-4">
+        <h2>Contact Us</h2>
+        <p>Get in touch with our team for any inquiries or book our services directly.</p>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-8 mb-4 mb-lg-0 mx-auto">
+          <!-- Form Selection Buttons -->
+          <div class="d-flex justify-content-center mb-4">
+            <div class="btn-group" role="group" aria-label="Form selection">
+              <button type="button" class="btn btn-primary active" id="message-tab" data-bs-toggle="tab"
+                data-bs-target="#message" role="tab">
+                <i class="fas fa-envelope me-2"></i>Send Message
+              </button>
+              <button type="button" class="btn btn-outline-primary" id="booking-tab" data-bs-toggle="tab"
+                data-bs-target="#booking" role="tab">
+                <i class="fas fa-calendar-check me-2"></i>Book an Errand
+              </button>
             </div>
           </div>
 
-          <!-- Business Errands -->
-          <div id="business" class="content-section">
-            <div class="card service-card h-100">
-              <div class="card-body p-3 p-lg-5">
-                <h3 class="card-title text-center mb-4">Business Errands: "Your Business Support Partner"</h3>
-                <p class="card-text text-center text-muted mb-4">This B2B service is aimed at small to medium-sized businesses that need a reliable 
-                  partner to handle operational tasks, freeing them up to focus on their core activities.
-                </p>
-                <ul class="list-unstyled">
-                  <li class="mb-3">
-                    <i class="fas fa-check-circle text-success me-2"></i>
-                    Event & Staff Support: Providing an extra set of hands for short-staffed businesses during events (e.g. catering, décor setup).
-                  </li>
-                  <li class="mb-3">
-                    <i class="fas fa-check-circle text-success me-2"></i>
-                    Local Courier Service: Urgent, same-day delivery of documents, small packages, or products to clients.
-                  </li>
-                  <li class="mb-3">
-                    <i class="fas fa-check-circle text-success me-2"></i>
-                    Post-Box Clearing: Regular collection of mail from the company’s post-box.
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
+          <div class="card shadow">
+            <div class="card-body p-4">
 
-          <!-- Institutional Support -->
-          <div id="institutional" class="content-section">
-            <div class="card service-card h-100">
-              <div class="card-body p-3 p-lg-5">
-                <h3 class="card-title text-center mb-4">Institutional Support: "Care & Comfort Services"</h3>
-                <p class="card-text text-center text-muted mb-4">
-                  This specialised service focuses on providing a compassionate, human connection for people in hospitals, clinics,
-                   retirement communities, or student residences.
-                </p>
-                <ul class="list-unstyled">
-                  <li class="mb-3">
-                    <i class="fas fa-check-circle text-success me-2"></i>
-                    Home-to-Hospital Delivery: Delivering warm meals, specific toiletries, phone chargers, books, blankets, and other personal items from home.
-                  </li>
-                  <li class="mb-3">
-                    <i class="fas fa-check-circle text-success me-2"></i>
-                    Entertainment: Picking up magazines, newspapers, puzzle books, or dropping off/charging devices.
-                  </li>
-                  <li class="mb-3">
-                    <i class="fas fa-check-circle text-success me-2"></i>
-                    Gift & Flower Delivery: Delivering flowers, balloons, or gifts from friends and family who can't visit.
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Premuim Services -->
-          <div id="premium" class="content-section">
-            <div class="card service-card h-100">
-              <div class="card-body p-3 p-lg-5">
-                <h3 class="card-title text-center mb-4">Premium Services: "The Executive Assistant"</h3>
-                <p class="card-text text-center text-muted mb-4">
-                  This is a high-trust, high-value category for critical or sensitive tasks that require the utmost professionalism, discretion,
-                   and reliability. These services likely command a higher price point.
-                </p>
-                <ul class="list-unstyled">
-                  <li class="mb-3">
-                    <i class="fas fa-check-circle text-success me-2"></i>
-                    Home & Pet Sitting Coordination: Being the point of contact for a house sitter or checking in on a property for clients who are travelling.
-                  </li>
-                  <li class="mb-3">
-                    <i class="fas fa-check-circle text-success me-2"></i>
-                    Property Management Support: Key handover services for rental properties or Airbnbs, and conducting basic entry/exit inspections.
-                  </li>
-                  <li class="mb-3">
-                    <i class="fas fa-check-circle text-success me-2"></i>
-                    Vehicle Maintenance: Taking a client's car for its annual service, a tyre change, or for a car wash and detailing.
-                  </li>
-                </ul>
+              <div class="tab-content" id="contactTabContent">
+                <!-- Message Form -->
+                <div class="tab-pane fade show active" id="message" role="tabpanel" aria-labelledby="message-tab">
+                  <form id="messageForm">
+                    <div class="row">
+                      <div class="col-md-6 mb-3">
+                        <label for="message-name" class="form-label">Full Name *</label>
+                        <input type="text" class="form-control" id="message-name" placeholder="Your Name" required>
+                      </div>
+                      <div class="col-md-6 mb-3">
+                        <label for="message-email" class="form-label">Email Address *</label>
+                        <input type="email" class="form-control" id="message-email" placeholder="Your Email" required>
+                      </div>
+                    </div>
+
+                    <div class="mb-3">
+                      <label for="message-subject" class="form-label">Subject *</label>
+                      <input type="text" class="form-control" id="message-subject" placeholder="Message Subject"
+                        required>
+                    </div>
+
+                    <div class="mb-4">
+                      <label for="message-content" class="form-label">Message *</label>
+                      <textarea class="form-control" id="message-content" rows="5" placeholder="Your message..."
+                        required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-100">
+                      <i class="fas fa-paper-plane me-2"></i>Send Message
+                    </button>
+                  </form>
+                </div>
+
+                <!-- Booking Form -->
+                <div class="tab-pane fade" id="booking" role="tabpanel" aria-labelledby="booking-tab">
+                  <form id="bookingForm">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <label for="booking-name" class="form-label">Full Name *</label>
+                        <input type="text" class="form-control" id="booking-name" placeholder="Your Name" required>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="booking-email" class="form-label">Email Address *</label>
+                        <input type="email" class="form-control" id="booking-email" placeholder="Your Email" required>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-6">
+                        <label for="booking-phone" class="form-label">Phone Number *</label>
+                        <input type="tel" class="form-control" id="booking-phone" placeholder="Your Phone" required>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="booking-service" class="form-label">Service Type *</label>
+                        <select class="form-select" id="booking-service" required>
+                          <option value="" selected disabled>Select Service</option>
+                          <option value="personal">Personal</option>
+                          <option value="business">Business</option>
+                          <option value="institutional">Institutional Support</option>
+                          <option value="premium">Premium Services</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-6">
+                        <label for="booking-pickup" class="form-label">Pickup Location *</label>
+                        <input type="text" class="form-control" id="booking-pickup" placeholder="Pickup Address"
+                          required>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="booking-dropoff" class="form-label">Drop-off Location *</label>
+                        <input type="text" class="form-control" id="booking-dropoff" placeholder="Delivery Address"
+                          required>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-6 mb-3">
+                        <label for="booking-date" class="form-label">Preferred Date *</label>
+                        <input type="date" class="form-control" id="booking-date" required>
+                      </div>
+                      <div class="col-md-6 mb-3">
+                        <label for="booking-time" class="form-label">Preferred Time *</label>
+                        <input type="time" class="form-control" id="booking-time" required>
+                      </div>
+                    </div>
+
+                    <div class="mb-4">
+                      <label for="booking-instructions" class="form-label">Special Instructions</label>
+                      <textarea class="form-control" id="booking-instructions" rows="3"
+                        placeholder="Any special instructions or notes"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-100">
+                      <i class="fas fa-calendar-check me-2"></i>Book Now
+                    </button>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
@@ -880,69 +884,69 @@
       </div>
     </div>
   </section>
-
   <!-- Footer -->
-   <footer class="text-white py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 mb-4 mb-lg-0">
-                    <a href="#hero" class="d-flex align-items-center mb-4 text-decoration-none">
-                        <span class="text-xl fw-bold" style="color: var(--primary-light);">Morumiwa</span>
-                        <span class="ms-1 text-white">The Errand Guys</span>
-                    </a>
-                    <p class="mb-4">Premium errand services designed to meet your personal and business needs with reliability and efficiency.</p>
-                    <div class="social-icons">
-                        <a href="https://web.facebook.com/profile.php?id=61553792757221" class="text-white me-3" target="_blank">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="https://www.tiktok.com/@morumiwa.the.erra" class="text-white me-3" target="_blank">
-                            <i class="fab fa-tiktok"></i>
-                        </a>
-                        <a href="https://wa.me/27678102248?text=Hi" class="text-white me-3" target="_blank">
-                            <i class="fab fa-whatsapp"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
-                    <h5 class="mb-4">Quick Links</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="#hero" class="text-white text-decoration-none">Home</a></li>
-                        <li class="mb-2"><a href="#about" class="text-white text-decoration-none">About Us</a></li>
-                        <li class="mb-2"><a href="#services" class="text-white text-decoration-none">Services</a></li>
-                        <li class="mb-2"><a href="#pricing" class="text-white text-decoration-none">Pricing</a></li>
-                        <li><a href="#contact-section" class="text-white text-decoration-none">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-3 col-md-4 mb-4 mb-md-0">
-                    <h5 class="mb-4">Our Services</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="#services" class="text-white text-decoration-none">Personal Errands</a></li>
-                        <li class="mb-2"><a href="#services" class="text-white text-decoration-none">Business Errands</a></li>
-                        <li class="mb-2"><a href="#services" class="text-white text-decoration-none">Hospital Errands</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-3 col-md-4">
-                    <h5 class="mb-4">Contact Information</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-2">
-                            <i class="fas fa-phone me-2"></i>
-                            <a href="tel:+27678102248" target="_blank">+27 67 810 2248</a>
-                        </li>
-                        <li class="mb-2">
-                            <i class="fas fa-envelope me-2"></i>
-                            <a href="mailto:info@morumiwa.co.za" target="_blank">info@morumiwa.co.za</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <hr class="my-4">
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <p class="mb-0">© 2025 Morumiwa Logistics Holdings. All rights reserved.</p>
-                </div>
-            </div>
+  <footer class="text-white py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 mb-4 mb-lg-0">
+          <a href="#hero" class="d-flex align-items-center mb-4 text-decoration-none">
+            <span class="text-xl fw-bold" style="color: var(--secondary-color);">Morumiwa</span>
+            <span class="ms-1 text-white">The Errand Guys</span>
+          </a>
+          <p class="mb-4">Premium errand services designed to meet your personal and business needs with reliability and
+            efficiency.</p>
+          <div class="social-icons">
+            <a href="https://web.facebook.com/profile.php?id=61553792757221" class="text-white me-3" target="_blank">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.tiktok.com/@morumiwa.the.erra" class="text-white me-3" target="_blank">
+              <i class="fab fa-tiktok"></i>
+            </a>
+            <a href="https://wa.me/27678102248?text=Hi" class="text-white me-3" target="_blank">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
         </div>
-    </footer>
+        <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+          <h5 class="mb-4">Quick Links</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="#hero" class="text-white text-decoration-none">Home</a></li>
+            <li class="mb-2"><a href="#about" class="text-white text-decoration-none">About Us</a></li>
+            <li class="mb-2"><a href="#services" class="text-white text-decoration-none">Services</a></li>
+            <li class="mb-2"><a href="#pricing" class="text-white text-decoration-none">Pricing</a></li>
+            <li><a href="#contact-section" class="text-white text-decoration-none">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-4 mb-4 mb-md-0">
+          <h5 class="mb-4">Our Services</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="#services" class="text-white text-decoration-none">Personal Errands</a></li>
+            <li class="mb-2"><a href="#services" class="text-white text-decoration-none">Business Errands</a></li>
+            <li class="mb-2"><a href="#services" class="text-white text-decoration-none">Hospital Errands</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-4">
+          <h5 class="mb-4">Contact Information</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2">
+              <i class="fas fa-phone me-2"></i>
+              <a href="tel:+27678102248" target="_blank">+27 67 810 2248</a>
+            </li>
+            <li class="mb-2">
+              <i class="fas fa-envelope me-2"></i>
+              <a href="mailto:info@morumiwa.co.za" target="_blank">info@morumiwa.co.za</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <hr class="my-4">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <p class="mb-0">© 2025 Morumiwa Logistics Holdings. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
 
   <!-- Scroll to Top Button -->
   <div class="scroll-top" id="scrollTop">

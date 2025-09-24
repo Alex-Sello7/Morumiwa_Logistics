@@ -90,6 +90,131 @@ function initScrollToTop() {
   });
 }
 
+    // Services Slideshow functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const slides = document.querySelectorAll('.service-slide');
+      const prevBtn = document.getElementById('prevService');
+      const nextBtn = document.getElementById('nextService');
+      const indicators = document.querySelectorAll('.slideshow-indicators .indicator');
+      const toggleAutoplayBtn = document.getElementById('toggleAutoplay');
+      
+      if (slides.length === 0) return;
+      
+      let currentSlide = 0;
+      let isPlaying = true;
+      let slideshowInterval;
+      const slideDuration = 5000; // 5 seconds per slide
+      
+      // Function to show a specific slide
+      function showSlide(index) {
+        // Remove active class from all slides and indicators
+        slides.forEach(slide => slide.classList.remove('active'));
+        indicators.forEach(indicator => indicator.classList.remove('active'));
+        
+        // Ensure index is within bounds (loop around)
+        if (index >= slides.length) {
+          currentSlide = 0;
+        } else if (index < 0) {
+          currentSlide = slides.length - 1;
+        } else {
+          currentSlide = index;
+        }
+        
+        // Add active class to current slide and indicator
+        slides[currentSlide].classList.add('active');
+        indicators[currentSlide].classList.add('active');
+      }
+      
+      // Next slide function
+      function nextSlide() {
+        showSlide(currentSlide + 1);
+      }
+      
+      // Previous slide function
+      function prevSlide() {
+        showSlide(currentSlide - 1);
+      }
+      
+      // Auto-play function
+      function startSlideshow() {
+        if (isPlaying) {
+          slideshowInterval = setInterval(nextSlide, slideDuration);
+          toggleAutoplayBtn.innerHTML = '<i class="fas fa-pause"></i> Pause Auto-play';
+        }
+      }
+      
+      function stopSlideshow() {
+        clearInterval(slideshowInterval);
+        toggleAutoplayBtn.innerHTML = '<i class="fas fa-play"></i> Play Auto-play';
+      }
+      
+      function toggleAutoplay() {
+        isPlaying = !isPlaying;
+        if (isPlaying) {
+          startSlideshow();
+        } else {
+          stopSlideshow();
+        }
+      }
+      
+      // Event listeners for navigation controls
+      if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+          prevSlide();
+          if (isPlaying) {
+            stopSlideshow();
+            startSlideshow(); // Reset the interval
+          }
+        });
+      }
+      
+      if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+          nextSlide();
+          if (isPlaying) {
+            stopSlideshow();
+            startSlideshow(); // Reset the interval
+          }
+        });
+      }
+      
+      // Event listeners for indicators
+      indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
+          showSlide(index);
+          if (isPlaying) {
+            stopSlideshow();
+            startSlideshow(); // Reset the interval
+          }
+        });
+      });
+      
+      // Event listener for autoplay toggle
+      if (toggleAutoplayBtn) {
+        toggleAutoplayBtn.addEventListener('click', toggleAutoplay);
+      }
+      
+      // Pause slideshow on hover
+      const servicesSection = document.getElementById('services');
+      if (servicesSection) {
+        servicesSection.addEventListener('mouseenter', () => {
+          if (isPlaying) {
+            stopSlideshow();
+          }
+        });
+        
+        servicesSection.addEventListener('mouseleave', () => {
+          if (isPlaying) {
+            startSlideshow();
+          }
+        });
+      }
+      
+      // Initialize the slideshow
+      showSlide(0);
+      startSlideshow();
+    });
+
 // Services Tab functionality
 function initServicesTabs() {
   const tabButtons = document.querySelectorAll('#services .tab-button');
