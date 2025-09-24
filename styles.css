@@ -898,6 +898,36 @@ footer a:hover:not(.social-icons a)::after {
   }
 }
 
+@media (max-width: 376px) {
+  nav .container .navbar-brand span {
+    font-size: 19px;
+  }
+}
+
+@media (max-width: 363px) {
+  nav .container .navbar-brand span {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 348px) {
+  nav .container .navbar-brand span {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 333px) {
+  nav .container .navbar-brand span {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 320px) {
+  nav .container .navbar-brand span {
+    font-size: 15px;
+  }
+}
+
 
 #contact .btn-group .btn.active {
   background-color: var(--primary-color);
