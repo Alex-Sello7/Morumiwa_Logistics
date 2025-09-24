@@ -1,4 +1,4 @@
-// index.js
+"use strict"
 document.addEventListener('DOMContentLoaded', function() {
   // Initialize all functions
   initNavbarScroll();
@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', function() {
   initFormSubmissions();
   initFormValidation();
   initCharacterCounters();
+  initServicesSlideshow();
+  initWhyChooseCounters();
 });
 
 /* SPLASH SCREEN */
@@ -21,7 +23,7 @@ window.addEventListener("load", () => {
     const splash = document.getElementById('splash');
     splash.style.animation = "fadeOut 1s forwards";
     
-    // Immediately restore default cursor when splash starts fading
+    // Immediately restore default cursor 
     document.body.style.cursor = 'default';
     
     setTimeout(() => {
@@ -90,130 +92,145 @@ function initScrollToTop() {
   });
 }
 
-    // Services Slideshow functionality
-    document.addEventListener('DOMContentLoaded', function() {
-      const slides = document.querySelectorAll('.service-slide');
-      const prevBtn = document.getElementById('prevService');
-      const nextBtn = document.getElementById('nextService');
-      const indicators = document.querySelectorAll('.slideshow-indicators .indicator');
-      const toggleAutoplayBtn = document.getElementById('toggleAutoplay');
-      
-      if (slides.length === 0) return;
-      
-      let currentSlide = 0;
-      let isPlaying = true;
-      let slideshowInterval;
-      const slideDuration = 5000; // 5 seconds per slide
-      
-      // Function to show a specific slide
-      function showSlide(index) {
-        // Remove active class from all slides and indicators
-        slides.forEach(slide => slide.classList.remove('active'));
-        indicators.forEach(indicator => indicator.classList.remove('active'));
-        
-        // Ensure index is within bounds (loop around)
-        if (index >= slides.length) {
-          currentSlide = 0;
-        } else if (index < 0) {
-          currentSlide = slides.length - 1;
-        } else {
-          currentSlide = index;
-        }
-        
-        // Add active class to current slide and indicator
-        slides[currentSlide].classList.add('active');
-        indicators[currentSlide].classList.add('active');
-      }
-      
-      // Next slide function
-      function nextSlide() {
-        showSlide(currentSlide + 1);
-      }
-      
-      // Previous slide function
-      function prevSlide() {
-        showSlide(currentSlide - 1);
-      }
-      
-      // Auto-play function
-      function startSlideshow() {
-        if (isPlaying) {
-          slideshowInterval = setInterval(nextSlide, slideDuration);
-          toggleAutoplayBtn.innerHTML = '<i class="fas fa-pause"></i> Pause Auto-play';
-        }
-      }
-      
-      function stopSlideshow() {
-        clearInterval(slideshowInterval);
-        toggleAutoplayBtn.innerHTML = '<i class="fas fa-play"></i> Play Auto-play';
-      }
-      
-      function toggleAutoplay() {
-        isPlaying = !isPlaying;
-        if (isPlaying) {
-          startSlideshow();
-        } else {
-          stopSlideshow();
-        }
-      }
-      
-      // Event listeners for navigation controls
-      if (prevBtn) {
-        prevBtn.addEventListener('click', () => {
-          prevSlide();
-          if (isPlaying) {
-            stopSlideshow();
-            startSlideshow(); // Reset the interval
-          }
-        });
-      }
-      
-      if (nextBtn) {
-        nextBtn.addEventListener('click', () => {
-          nextSlide();
-          if (isPlaying) {
-            stopSlideshow();
-            startSlideshow(); // Reset the interval
-          }
-        });
-      }
-      
-      // Event listeners for indicators
-      indicators.forEach((indicator, index) => {
-        indicator.addEventListener('click', () => {
-          showSlide(index);
-          if (isPlaying) {
-            stopSlideshow();
-            startSlideshow(); // Reset the interval
-          }
-        });
-      });
-      
-      // Event listener for autoplay toggle
-      if (toggleAutoplayBtn) {
-        toggleAutoplayBtn.addEventListener('click', toggleAutoplay);
-      }
-      
-      // Pause slideshow on hover
-      const servicesSection = document.getElementById('services');
-      if (servicesSection) {
-        servicesSection.addEventListener('mouseenter', () => {
-          if (isPlaying) {
-            stopSlideshow();
-          }
-        });
-        
-        servicesSection.addEventListener('mouseleave', () => {
-          if (isPlaying) {
-            startSlideshow();
-          }
-        });
-      }
-      
-      // Initialize the slideshow
-      showSlide(0);
+// Services Slideshow 
+function initServicesSlideshow() {
+  const slides = document.querySelectorAll('.service-slide');
+  const prevBtn = document.getElementById('prevService');
+  const nextBtn = document.getElementById('nextService');
+  const indicators = document.querySelectorAll('.slideshow-indicators .indicator');
+  const toggleAutoplayBtn = document.getElementById('toggleAutoplay');
+  
+  if (slides.length === 0) return;
+  
+  let currentSlide = 0;
+  let isPlaying = true; // Set to true for auto-start
+  let slideshowInterval;
+  const slideDuration = 5000; // 5 seconds per slide
+  
+  // Function to show a specific slide
+  function showSlide(index) {
+    // Remove active class from all slides and indicators
+    slides.forEach(slide => slide.classList.remove('active'));
+    indicators.forEach(indicator => indicator.classList.remove('active'));
+    
+    // Ensure index is within bounds (loop around)
+    if (index >= slides.length) {
+      currentSlide = 0;
+    } else if (index < 0) {
+      currentSlide = slides.length - 1;
+    } else {
+      currentSlide = index;
+    }
+    
+    // Add active class to current slide and indicator
+    slides[currentSlide].classList.add('active');
+    indicators[currentSlide].classList.add('active');
+  }
+  
+  // Next slide function
+  function nextSlide() {
+    showSlide(currentSlide + 1);
+  }
+  
+  // Previous slide function
+  function prevSlide() {
+    showSlide(currentSlide - 1);
+  }
+  
+  // Auto-play function
+  function startSlideshow() {
+    if (isPlaying && !slideshowInterval) {
+      slideshowInterval = setInterval(nextSlide, slideDuration);
+    }
+  }
+  
+  function stopSlideshow() {
+    if (slideshowInterval) {
+      clearInterval(slideshowInterval);
+      slideshowInterval = null;
+    }
+  }
+  
+  function toggleAutoplay() {
+    isPlaying = !isPlaying;
+    if (isPlaying) {
       startSlideshow();
+    } else {
+      stopSlideshow();
+    }
+    updateAutoplayButton(); 
+  }
+  
+  function updateAutoplayButton() {
+    if (toggleAutoplayBtn) {
+      if (isPlaying) {
+        toggleAutoplayBtn.innerHTML = '<i class="fas fa-pause"></i>';
+      } else {
+        toggleAutoplayBtn.innerHTML = '<i class="fas fa-play"></i>';
+      }
+    }
+  }
+  
+  // Event listeners for navigation controls
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      prevSlide();
+      // Restart autoplay timer if playing
+      if (isPlaying) {
+        stopSlideshow();
+        startSlideshow();
+      }
     });
+  }
+  
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      nextSlide();
+      // Restart autoplay timer if playing
+      if (isPlaying) {
+        stopSlideshow();
+        startSlideshow();
+      }
+    });
+  }
+  
+  // Event listeners for indicators
+  indicators.forEach((indicator, index) => {
+    indicator.addEventListener('click', () => {
+      showSlide(index);
+      // Restart autoplay timer if playing
+      if (isPlaying) {
+        stopSlideshow();
+        startSlideshow();
+      }
+    });
+  });
+  
+  // Event listener for autoplay toggle
+  if (toggleAutoplayBtn) {
+    toggleAutoplayBtn.addEventListener('click', toggleAutoplay);
+  }
+  
+  // Pause slideshow on hover
+  const servicesSection = document.getElementById('services');
+  if (servicesSection) {
+    servicesSection.addEventListener('mouseenter', () => {
+      if (isPlaying) {
+        stopSlideshow();
+      }
+    });
+    
+    servicesSection.addEventListener('mouseleave', () => {
+      if (isPlaying) {
+        startSlideshow();
+      }
+    });
+  }
+  
+  showSlide(0);
+  updateAutoplayButton(); 
+  startSlideshow(); 
+}
 
 // Services Tab functionality
 function initServicesTabs() {
@@ -531,8 +548,8 @@ function submitForm(formType, formData) {
   submitButton.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Processing...';
   submitButton.disabled = true;
   
-  // Create a JSON server endpoint (simulated)
-  const endpoint = 'https://jsonplaceholder.typicode.com/posts'; // Using a test API
+  //(simulated)
+  const endpoint = 'https://jsonplaceholder.typicode.com/posts'; 
   
   // Prepare the data for submission
   const submissionData = {
@@ -556,7 +573,7 @@ function submitForm(formType, formData) {
     return response.json();
   })
   .then(data => {
-    // Simulate successful submission (in a real app, you'd check the response)
+   
     showResponse('success', `Your ${formType === 'message' ? 'message has been sent' : 'errand has been booked'}. We will contact you shortly!`);
     
     // Reset the form
@@ -637,5 +654,52 @@ function initFadeInAnimations() {
   
   fadeElements.forEach(element => {
     observer.observe(element);
+  });
+}
+
+function initWhyChooseCounters() {
+  const counters = document.querySelectorAll('.why-choose-us .counter');
+  const speed = 200;
+  
+  if (counters.length === 0) return;
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const counter = entry.target;
+        const target = +counter.getAttribute('data-target');
+        let count = 0;
+        const increment = target / speed;
+        
+        const updateCount = () => {
+          if (count < target) {
+            count += increment;
+            counter.innerText = Math.ceil(count);
+            setTimeout(updateCount, 1);
+          } else {
+            counter.innerText = target;
+            // Add symbols if needed
+            if (counter.getAttribute('data-target-plus') === 'true') {
+              counter.innerText += '+';
+            }
+            if(counter.getAttribute('data-target-percent') === 'true'){
+              counter.innerText += '%';
+            }
+          }
+        };
+        
+        updateCount();
+        observer.unobserve(counter);
+      }
+    });
+  }, { threshold: 0.5 });
+  
+  counters.forEach(counter => {
+    // Set up data attributes
+    counter.setAttribute('data-target-plus', 'false');
+    counter.setAttribute('data-target-percent', 'false');
+    
+    counter.innerText = '0';
+    observer.observe(counter);
   });
 }
